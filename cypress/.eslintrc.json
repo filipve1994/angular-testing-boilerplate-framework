@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "plugins": ["cypress", "chai-friendly"],
+  "extends": ["plugin:cypress/recommended", "plugin:chai-friendly/recommended"],
+  "env": {
+    "cypress/globals": true
+  },
+  "rules": {
+
+  }
+}

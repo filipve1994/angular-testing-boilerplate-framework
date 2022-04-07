@@ -68,6 +68,34 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "localdevelopment": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.localdevelopment.ts"
+                }
+              ],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
+            "test-e2e": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test-e2e.ts"
+                }
+              ],
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -80,6 +108,12 @@
             },
             "development": {
               "browserTarget": "angular-testing-boilerplate-framework:build:development"
+            },
+            "localdevelopment": {
+              "browserTarget": "angular-testing-boilerplate-framework:build:localdevelopment"
+            },
+            "test-e2e": {
+              "browserTarget": "angular-testing-boilerplate-framework:build:test-e2e"
             }
           },
           "defaultConfiguration": "development"
@@ -116,6 +150,14 @@
           "configurations": {
             "production": {
               "devServerTarget": "angular-testing-boilerplate-framework:serve:production"
+            },
+            "test-e2e": {
+              "devServerTarget": "angular-testing-boilerplate-framework:serve:test-e2e",
+              "configFile": "cypress.env.ci.json"
+            },
+            "test-e2e-headless": {
+              "devServerTarget": "angular-testing-boilerplate-framework:serve:test-e2e",
+              "configFile": "cypress.env.ci-headless.json"
             }
           }
         },
@@ -136,6 +178,10 @@
           "configurations": {
             "production": {
               "devServerTarget": "angular-testing-boilerplate-framework:serve:production"
+            },
+            "test-e2e": {
+              "devServerTarget": "angular-testing-boilerplate-framework:serve:test-e2e",
+              "configFile": "cypress.env.test-e2e-browser-locally.json"
             }
           }
         },

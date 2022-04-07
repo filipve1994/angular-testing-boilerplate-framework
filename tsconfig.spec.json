@@ -14,10 +14,5 @@
   "include": [
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ],
-  "exclude": [
-    "src/app/modules/example2/**",
-    "src/app/modules/example2/**/*.spec.ts",
-    "src/app/modules/example2/**/*.d.ts"
   ]
 }

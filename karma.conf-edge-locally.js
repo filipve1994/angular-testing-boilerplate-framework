@@ -38,8 +38,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    //    browsers: ['ChromeHeadless'],
+    browsers: ['Edge'],
+    //    browsers: ['EdgeHeadless'],
     singleRun: false,
     restartOnFileChange: true
   });

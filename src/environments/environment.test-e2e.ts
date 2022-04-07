@@ -1,3 +1,9 @@
+import packageVersion from '../../package.json';
+
 export const environment = {
-  production: true
+  version: packageVersion.version,
+  production: true,
+  showDevFeatures: false,
+  saveFileFeatureEnabled:false,
+  appName: "angular-testing-boilerplate-framework"
 };

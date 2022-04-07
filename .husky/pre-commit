@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run format:fix ||
+(
+  echo -e "\nX Prettier formatting failed!\n"
+  false;
+)
+
+echo -e " Prettier formatting succesful!"

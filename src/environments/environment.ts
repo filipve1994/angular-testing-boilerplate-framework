@@ -2,8 +2,14 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import packageVersion from '../../package.json';
+
 export const environment = {
-  production: false
+  version: packageVersion.version,
+  production: false,
+  showDevFeatures: true,
+  saveFileFeatureEnabled:true,
+  appName: "angular-testing-boilerplate-framework"
 };
 
 /*

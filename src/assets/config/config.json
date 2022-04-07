@@ -1,0 +1,9 @@
+{
+  "baseUrlApi": "http://localhost:8010",
+  "appRelease": "DEV-SNAPSHOT",
+  "appVersion": "DEV-SNAPSHOT-123-456-789",
+  "installationTime": "2022-04-07 05:06:07",
+  "addMetaAttributes": false,
+  "environmentLevel": "LOCAL",
+  "environmentname": "u0Local"
+}
