@@ -3,6 +3,13 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "app/core/*": ["@core/"],
+      "app/modules/*": ["@modules/"],
+      "app/shared/*": ["@shared/"],
+      "app/services/*": ["@services/"],
+      "app/utils/*": ["@utils/"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -21,6 +28,10 @@
     "lib": [
       "es2020",
       "dom"
+    ],
+    "types": [
+      "cypress",
+      "@testing-library/cypress"
     ]
   },
   "angularCompilerOptions": {
