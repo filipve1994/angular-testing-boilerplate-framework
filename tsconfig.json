@@ -4,15 +4,16 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@core/*": ["app/core/*"],
-      "@features/*": ["app/features/*"],
-      "@modules/*": ["app/modules/*"],
-      "@shared/*": ["app/shared/*"],
-      "@services/*": ["app/services/*"],
-      "@utils/*": ["app/utils/*"],
-      "@transloco/*": ["app/transloco/*"],
-      "@assets/*": ["app/assets/*"],
-      "@environments/*": ["environments/*"]
+      "@core/*": ["src/app/core/*"],
+      "@features/*": ["src/app/features/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@libraries/*": ["src/app/libraries/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@services/*": ["src/app/services/*"],
+      "@utils/*": ["src/app/utils/*"],
+      "@transloco/*": ["src/app/transloco/*"],
+      "@assets/*": ["src/app/assets/*"],
+      "@environments/*": ["src/environments/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -29,17 +30,9 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2020",
-      "dom"
-    ],
-    "types": [
-      "cypress",
-      "@testing-library/cypress"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2020", "dom"],
+    "types": ["cypress", "@testing-library/cypress"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true

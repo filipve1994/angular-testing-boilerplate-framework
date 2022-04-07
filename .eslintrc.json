@@ -1,8 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
+  "ignorePatterns": ["projects/**/*"],
   "overrides": [
     {
       "files": ["*.js"],
@@ -11,14 +9,9 @@
       }
     },
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "tsconfig.json",
-          "e2e/tsconfig.json"
-        ],
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
@@ -26,7 +19,7 @@
         "plugin:@angular-eslint/template/process-inline-templates",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-require-type-checking",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "prettier",
         "plugin:prettier/recommended"
       ],
@@ -57,7 +50,7 @@
         "@angular-eslint/component-class-suffix": [
           "error",
           {
-            "suffixes": ["Component","Page"]
+            "suffixes": ["Component", "Page"]
           }
         ],
         "@typescript-eslint/no-empty-function": ["off"],
@@ -69,28 +62,20 @@
           }
         ],
         "prefer-template": ["error"],
-        "newline-per-chained-call": ["error", {"ignoreChainWithDepth":  2}]
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }]
       }
     },
     // NOTE: WE ARE NOT APPLYING PRETTIER IN THIS OVERRIDE, ONLY @ANGULAR-ESLINT/TEMPLATE
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     },
     // NOTE: WE ARE NOT APPLYING @ANGULAR-ESLINT/TEMPLATE IN THIS OVERRIDE, ONLY PRETTIER
     {
-      "files": [
-        "*.html"
-      ],
+      "files": ["*.html"],
       "excludedFiles": ["*inline-template-*.component.html"],
-      "extends": [
-        "plugin:prettier/recommended"
-      ],
+      "extends": ["plugin:prettier/recommended"],
       "rules": {
         //NOTE: WE ARE OVERRIDING THE DEFAULT CONFIG TO ALWAYS SET THE PARSER TO ANGULAR (SEE BELOW)
         "prettier/prettier": [
@@ -104,7 +89,7 @@
     },
     {
       "files": ["*.component.ts"],
-      "extends": ["plugin/@angular-eslint/template/process-inline-templates"]
+      "extends": ["plugin:@angular-eslint/template/process-inline-templates"]
     }
   ]
 }

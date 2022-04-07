@@ -6,12 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-example.component.scss']
 })
 export class AppExampleComponent implements OnInit {
-
   title = 'angular-testing-boilerplate-framework';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -26,10 +26,7 @@ export function testIdSelector(testId: string): string {
  * @param selector CSS selector
  *
  */
-export function queryByCss<T>(
-  fixture: ComponentFixture<T>,
-  selector: string,
-): DebugElement {
+export function queryByCss<T>(fixture: ComponentFixture<T>, selector: string): DebugElement {
   // The return type of DebugElement#query() is declared as DebugElement,
   // but the actual return type is DebugElement | null.
   // See https://github.com/angular/angular/issues/22449.
@@ -81,11 +78,7 @@ export function getText<T>(fixture: ComponentFixture<T>, testId: string): string
  * @param testId Test id set by `data-testid`
  * @param text Expected text
  */
-export function expectText<T>(
-  fixture: ComponentFixture<T>,
-  testId: string,
-  text: string,
-): void {
+export function expectText<T>(fixture: ComponentFixture<T>, testId: string, text: string): void {
   expect(getText(fixture, testId)).toBe(text);
 }
 
@@ -118,11 +111,7 @@ export function expectContent<T>(fixture: ComponentFixture<T>, text: string): vo
  * @param type Event name, e.g. `input`
  * @param bubbles Whether the event bubbles up in the DOM tree
  */
-export function dispatchFakeEvent(
-  element: EventTarget,
-  type: string,
-  bubbles: boolean = false,
-): void {
+export function dispatchFakeEvent(element: EventTarget, type: string, bubbles: boolean = false): void {
   const event = document.createEvent('Event');
   event.initEvent(type, bubbles, false);
   element.dispatchEvent(event);
@@ -139,7 +128,7 @@ export function dispatchFakeEvent(
  */
 export function setFieldElementValue(
   element: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
-  value: string,
+  value: string
 ): void {
   element.value = value;
   // Dispatch an `input` or `change` fake event
@@ -155,11 +144,7 @@ export function setFieldElementValue(
  * @param testId Test id set by `data-testid`
  * @param value Form field value
  */
-export function setFieldValue<T>(
-  fixture: ComponentFixture<T>,
-  testId: string,
-  value: string,
-): void {
+export function setFieldValue<T>(fixture: ComponentFixture<T>, testId: string, value: string): void {
   setFieldElementValue(findEl(fixture, testId).nativeElement, value);
 }
 
@@ -171,11 +156,7 @@ export function setFieldValue<T>(
  * @param testId Test id set by `data-testid`
  * @param checked Whether the checkbox or radio should be checked
  */
-export function checkField<T>(
-  fixture: ComponentFixture<T>,
-  testId: string,
-  checked: boolean,
-): void {
+export function checkField<T>(fixture: ComponentFixture<T>, testId: string, checked: boolean): void {
   const { nativeElement } = findEl(fixture, testId);
   nativeElement.checked = checked;
   // Dispatch a `change` fake event so Angular form bindings take notice of the change.
@@ -224,19 +205,13 @@ export function click<T>(fixture: ComponentFixture<T>, testId: string): void {
  * @param fixture Fixture of the parent Component
  * @param selector Element selector, e.g. `app-example`
  */
-export function findComponent<T>(
-  fixture: ComponentFixture<T>,
-  selector: string,
-): DebugElement {
+export function findComponent<T>(fixture: ComponentFixture<T>, selector: string): DebugElement {
   return queryByCss(fixture, selector);
 }
 
 /**
  * Finds all nested Components by its selector, e.g. `app-example`.
  */
-export function findComponents<T>(
-  fixture: ComponentFixture<T>,
-  selector: string,
-): DebugElement[] {
+export function findComponents<T>(fixture: ComponentFixture<T>, selector: string): DebugElement[] {
   return fixture.debugElement.queryAll(By.css(selector));
 }

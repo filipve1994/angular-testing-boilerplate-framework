@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'globals';
+
 //tailwind
 @tailwind base;
 @tailwind components;
@@ -7,5 +9,15 @@
 
 //bootstrap
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
+//primeng
+
+//@import "~primeng/resources/themes/tailwind-light/theme.css";
+//@import "~primeng/resources/themes/bootstrap4-dark-blue/theme.css";
+//@import "~primeng/resources/themes/fluent-light/theme.css";
+
+@import '~primeng/resources/primeng.min.css';
+@import '~primeicons/primeicons.css';
+
+@import 'styles/theme1';

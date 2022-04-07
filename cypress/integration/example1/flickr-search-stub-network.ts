@@ -1,4 +1,9 @@
-import {photo1, photo1Link, photos, searchTerm} from "../../../src/app/modules/example1/spec-helpers/photo.spec-helper";
+import {
+  photo1,
+  photo1Link,
+  photos,
+  searchTerm
+} from '../../../src/app/modules/examples/example1/spec-helpers/photo.spec-helper';
 
 describe('Flickr search (with network stubbing)', () => {
   const encodedSearchTerm = encodeURIComponent(searchTerm);
@@ -6,8 +11,8 @@ describe('Flickr search (with network stubbing)', () => {
 
   const flickrResponse = {
     photos: {
-      photo: photos,
-    },
+      photo: photos
+    }
   };
 
   beforeEach(() => {
@@ -16,8 +21,8 @@ describe('Flickr search (with network stubbing)', () => {
       url: expectedUrl,
       response: flickrResponse,
       headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
+        'Access-Control-Allow-Origin': '*'
+      }
     }).as('flickrSearchRequest');
 
     cy.visit('/');
@@ -32,9 +37,7 @@ describe('Flickr search (with network stubbing)', () => {
     cy.byTestId('photo-item-link')
       .should('have.length', 2)
       .each((link, index) => {
-        expect(link.attr('href')).to.equal(
-          `https://www.flickr.com/photos/${photos[index].owner}/${photos[index].id}`,
-        );
+        expect(link.attr('href')).to.equal(`https://www.flickr.com/photos/${photos[index].owner}/${photos[index].id}`);
       });
     cy.byTestId('photo-item-image')
       .should('have.length', 2)
